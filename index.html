@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <!-- header section -->
+    <section class="header">
+      <h1 class="title">Welcome to Katik</h1>
+      <p class="desc">
+        Hai Sobat , Selamat datang di Katik :] <br />
+        Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan
+        keliling bangun datar
+      </p>
+      <div class="buttongroup">
+        <button class="btn active">Segitiga</button>
+        <button class="btn">Jajargenjang</button>
+      </div>
+    </section>
+    <section class="body">
+      <div class="selector">
+        <!-- switchCalc for switching between luas and keliling calculator -->
+        <button onclick="switchCalc('luas')" class="active" id="luasbtn">
+          Luas
+        </button>
+        <button onclick="switchCalc('keliling')" id="kelbtn">Keliling</button>
+      </div>
+      <!-- luas view -->
+      <div class="luas" id="hitungLuas">
+        <div class="card">
+          <div class="title">Luas Segitiga</div>
+          <!-- soal img -->
+          <div class="img">
+            <img src="img/segitiga.png" alt="" srcset="" />
+          </div>
+          <!-- soal deskripsi -->
+          <div class="desc">
+            <p>Rumus Luas Segitiga:</p>
+            <h2>L = 1/2 x a x t</h2>
+            <p>Dimana: <br />L = Luas<br />a = Panjang Alas<br />t = Tinggi</p>
+          </div>
+          <hr />
+          <!-- input calculator -->
+          <div class="calculator">
+            <div class="subtitle">Hitung Luas Segitiga</div>
+            <label for="">Alas</label>
+            <input type="number" id="alas" placeholder="Nilai Alas" />
+            <label for="">Tinggi</label>
+            <input type="number" id="tinggi" placeholder="Nilai Tinggi" />
+            <div id="result1"></div>
+            <!-- trigger calculate function related current calculation by passing isActive state -->
+
+            <button onclick="calculate(isActive)">Hitung</button>
+          </div>
+        </div>
+      </div>
+      <!-- keliling view -->
+      <div class="keliling" id="hitungKel">
+        <div class="card">
+          <div class="title">Keliling Segitiga</div>
+          <!-- soal img -->
+          <div class="img">
+            <img src="img/segitiga.png" alt="" srcset="" />
+          </div>
+          <!-- soal deskripsi -->
+          <div class="desc">
+            <p>Rumus Keliling Segitiga:</p>
+            <h2>K = S1 + S2 + S3</h2>
+            <p>
+              Dimana: <br />K = keliling<br />S1 = Sisi A<br />S2 = Sisi B<br />S3
+              = Sisi C
+            </p>
+          </div>
+          <hr />
+          <!-- input calculator -->
+          <div class="calculator">
+            <h4 class="subtitle">Hitung Keliling Segitiga</h4>
+            <label for="">S1</label>
+            <input type="number" id="s1" placeholder="Nilai S1" />
+            <label for="">S2</label>
+            <input type="number" id="s2" placeholder="Nilai S2" />
+            <label for="">S3</label>
+            <input type="number" id="s3" placeholder="Nilai S3" />
+            <div id="result2"></div>
+            <!-- trigger calculate function related current calculation by passing isActive state -->
+            <button onclick="calculate(isActive)">Hitung</button>
+          </div>
+        </div>
+      </div>
+      <div class="reset">
+        <button onclick="resetField(isActive)" class="reset">Reset</button>
+      </div>
+    </section>
+    <section class="footer">
+      <h4>Ryan Runako Sutantyo - Revou Fundamental Course&copy2024</h4>
+      <p>ryanrunakoo@hotmail.com</p>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>
